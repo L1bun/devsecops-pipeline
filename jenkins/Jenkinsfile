@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_USER = 'L1bun'
+        DOCKER_USER = 'l1bun'
         APP_NAME    = 'devsecops-app'
     }
 
@@ -10,7 +10,7 @@ pipeline {
         stage('Fetch Source') {
             steps {
                 // Specified 'main' branch here to avoid the master error
-                git branch: 'main', url: 'https://github.com/L1bun/devsecops-pipeline.git'
+                git branch: 'main', url: 'https://github.com/l1bun/devsecops-pipeline.git'
             }
         }
 
