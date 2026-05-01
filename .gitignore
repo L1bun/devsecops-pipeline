@@ -1,0 +1,4 @@
+jenkins-minikube/
+*.pem
+*.key
+Jenkinsfile.save
