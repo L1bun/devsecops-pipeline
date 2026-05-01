@@ -1,5 +1,11 @@
 # DevSecOps Pipeline Project
 
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Docker](https://img.shields.io/badge/docker-ready-blue)
+![Kubernetes](https://img.shields.io/badge/kubernetes-deployed-blue)
+![Security](https://img.shields.io/badge/security-OWASP-red)
+![Python](https://img.shields.io/badge/python-3.10-yellow)
+
 A full end-to-end DevSecOps pipeline I built to automate the process of building, scanning, and deploying a containerized web application using modern DevOps tools.
 
 ## What This Does
@@ -13,7 +19,7 @@ Every time I push code to GitHub, the pipeline automatically:
 
 ## Tools & Technologies
 
-- **Jenkins** - CI/CD auto
+- **Jenkins** - CI/CD
 devsecops-pipeline/
 ├── app/                  # Flask web application
 │   ├── app.py
