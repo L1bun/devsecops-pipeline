@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_USER = 'l1bun'
-        APP_NAME    = 'devsecops-app'
+        APP_NAME = 'devsecops-app'
     }
     stages {
         stage('Fetch Source') {
@@ -17,8 +17,10 @@ pipeline {
         }
         stage('Vulnerability Scan') {
             steps {
-                sh 'mkdir -p security-report'
-                sh "docker run --rm -v \$(pwd):/src owasp/dependency-check --scan /src --format HTML --out /src/security-report || true"
+                timeout(time: 5, unit: 'MINUTES') {
+                    sh 'mkdir -p security-report'
+                    sh "docker run --rm -v \$(pwd):/src owasp/dependency-check --scan /src --format HTML --out /src/security-report --noupdate || true"
+                }
             }
         }
         stage('Registry Push') {
